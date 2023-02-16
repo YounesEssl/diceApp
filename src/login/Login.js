@@ -9,6 +9,7 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [logged, setLogged] = useState(false);
+  const [mail, setMail] = useState("");
 
   const onLogin = (e) => {
     e.preventDefault();
@@ -18,6 +19,7 @@ const Login = () => {
         const user = userCredential.user;
         // navigate("/");
         console.log(user);
+        setLogged(true);
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -28,49 +30,51 @@ const Login = () => {
 
   return (
     <>
-      {" "}
-      {}
-      <main>
-        <section>
-          <div>
-            <p> FocusApp </p>
+      {logged ? (
+        mail
+      ) : (
+        <main>
+          <section>
+            <div>
+              <p> FocusApp </p>
 
-            <form>
-              <div>
-                <label htmlFor="email-address">Email address</label>
-                <input
-                  id="email-address"
-                  name="email"
-                  type="email"
-                  required
-                  placeholder="Email address"
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-              </div>
+              <form>
+                <div>
+                  <label htmlFor="email-address">Email address</label>
+                  <input
+                    id="email-address"
+                    name="email"
+                    type="email"
+                    required
+                    placeholder="Email address"
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
+                </div>
 
-              <div>
-                <label htmlFor="password">Password</label>
-                <input
-                  id="password"
-                  name="password"
-                  type="password"
-                  required
-                  placeholder="Password"
-                  onChange={(e) => setPassword(e.target.value)}
-                />
-              </div>
+                <div>
+                  <label htmlFor="password">Password</label>
+                  <input
+                    id="password"
+                    name="password"
+                    type="password"
+                    required
+                    placeholder="Password"
+                    onChange={(e) => setPassword(e.target.value)}
+                  />
+                </div>
 
-              <div>
-                <button onClick={onLogin}>Login</button>
-              </div>
-            </form>
+                <div>
+                  <button onClick={onLogin}>Login</button>
+                </div>
+              </form>
 
-            <p className="text-sm text-white text-center">
-              No account yet? <NavLink to="/signup">Sign up</NavLink>
-            </p>
-          </div>
-        </section>
-      </main>
+              <p className="text-sm text-white text-center">
+                No account yet? <NavLink to="/signup">Sign up</NavLink>
+              </p>
+            </div>
+          </section>
+        </main>
+      )}
     </>
   );
 };
