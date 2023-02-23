@@ -37,6 +37,7 @@ const SignUp = () => {
             <form>
               <div>
                 <label htmlFor="email-address">Email address</label>
+                {/* ne pas toucher cette input excepté en css */}
                 <input
                   type="email"
                   label="Email address"
@@ -49,6 +50,7 @@ const SignUp = () => {
 
               <div>
                 <label htmlFor="password">Password</label>
+                {/* ne pas toucher cette input excepté en css */}
                 <input
                   type="password"
                   label="Create password"
@@ -58,7 +60,7 @@ const SignUp = () => {
                   placeholder="Password"
                 />
               </div>
-
+              {/* peut être changer en input mais faut garder le onClick={onLogin} */}
               <button type="submit" onClick={onSubmit}>
                 Sign up
               </button>
@@ -66,6 +68,7 @@ const SignUp = () => {
 
             <p>
               Already have an account? <NavLink to="/login">Sign in</NavLink>
+              {/*                      /\ liens de redirection vers la page login/\  */}
             </p>
           </div>
         </div>

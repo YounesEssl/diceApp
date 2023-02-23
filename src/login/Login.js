@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
-// import "firebase/compat/auth";
 import { auth } from "../firebase";
 import { NavLink, useNavigate } from "react-router-dom";
 import localStorage from "localStorage";
@@ -9,8 +8,6 @@ const Login = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  // const [logged, setLogged] = useState(false);
-  // const [mail, setMail] = useState("");
 
   const onLogin = (e) => {
     e.preventDefault();
@@ -27,6 +24,7 @@ const Login = () => {
         const errorCode = error.code;
         const errorMessage = error.message;
         console.log(errorCode, errorMessage);
+        // peut y être ajouter des balises ou alert qui prévienne que l'utilisateur n'à pas le bon mdp ou mail
       });
   };
 
@@ -40,6 +38,8 @@ const Login = () => {
             <form>
               <div>
                 <label htmlFor="email-address">Email address</label>
+
+                {/* ne pas toucher cette input excepté en css */}
                 <input
                   id="email-address"
                   name="email"
@@ -52,6 +52,7 @@ const Login = () => {
 
               <div>
                 <label htmlFor="password">Password</label>
+                {/* ne pas toucher cette input excepté en css */}
                 <input
                   id="password"
                   name="password"
@@ -63,12 +64,14 @@ const Login = () => {
               </div>
 
               <div>
+                {/* peut être changer en input mais faut garder le onClick={onLogin} */}
                 <button onClick={onLogin}>Login</button>
               </div>
             </form>
 
             <p className="text-sm text-white text-center">
               No account yet? <NavLink to="/signup">Sign up</NavLink>
+              {/*              /\ liens de redirection vers la page inscription/\  */}
             </p>
           </div>
         </section>
