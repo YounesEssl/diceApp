@@ -8,6 +8,7 @@ import {
   updateDoc,
 } from "firebase/firestore";
 import { db } from "../firebase";
+import localStorage from "localStorage";
 
 const Todo = () => {
   //   const [book, setBook] = useState(false);
@@ -26,7 +27,7 @@ const Todo = () => {
     }
   };
 
-  function updateBooking(book, table) {
+  function updateBooking(book, table, user) {
     const tableId = [
       "7clvepOH0BugOYWqiRqx",
       "BkzvILDCtBThE5jr2NcQ",
@@ -36,6 +37,7 @@ const Todo = () => {
     console.log(tableRef);
     const data = {
       state: book,
+      user: user,
     };
     updateDoc(tableRef, data)
       .then((tableRef) => {
@@ -61,6 +63,19 @@ const Todo = () => {
     fetchPost();
   }, []);
 
+  function verif(t, v) {
+    if (v === "book") {
+      if (localStorage.getItem("logged") && !t) {
+        return false;
+      } else return true;
+    } else {
+      if (JSON.parse(localStorage.getItem("email")) == t) {
+        console.log("condition validé");
+        return false; //false
+      } else return true; //true
+    }
+  }
+
   return (
     <section className="todo-container">
       <div className="todo">
@@ -82,29 +97,37 @@ const Todo = () => {
         </div>
         <div className="todo-content">
           <button onClick={fetchPost}>fetch all</button>
-          {todos?.map((todo, i) => (
-            <p key={i}>
-              {todo.table} | {todo.state ? "booked | " : "not booked | "}|
-              <button
-                onClick={() => {
-                  // setBook(true);
-                  // console.log("btn : " + book);
-                  updateBooking(true, i);
-                }}
-              >
-                BOOK
-              </button>
-              <button
-                onClick={() => {
-                  // setBook(false);
-                  // console.log("btn : " + book);
-                  updateBooking(false, i);
-                }}
-              >
-                UNBOOK
-              </button>
-            </p>
-          ))}
+          <button onClick={() => console.log(todos[2].user)}>todos</button>
+          {todos?.map((todo, i) => {
+            // console.log(todo.user);
+            // console.log(JSON.parse(localStorage.getItem("email")));
+
+            return (
+              <p key={i}>
+                {todo.table} | {todo.state ? "booked | " : "not booked | "}|
+                <button
+                  hidden={verif(todo.state, "book")}
+                  onClick={() => {
+                    updateBooking(
+                      true,
+                      i,
+                      JSON.parse(localStorage.getItem("email"))
+                    );
+                  }}
+                >
+                  BOOK
+                </button>
+                <button
+                  hidden={verif(todo.user)}
+                  onClick={() => {
+                    updateBooking(false, i, "");
+                  }}
+                >
+                  UNBOOK
+                </button>
+              </p>
+            );
+          })}
         </div>
       </div>
     </section>
