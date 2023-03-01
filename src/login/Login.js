@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase";
-import { NavLink, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import localStorage from "localStorage";
-
+import logowhite from "../images/logowhite.png";
+import "./Login.css";
 const Login = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
@@ -31,48 +32,36 @@ const Login = () => {
   return (
     <>
       <main>
-        <section>
-          <div>
-            <p> FocusApp </p>
-
-            <form>
-              <div>
-                <label htmlFor="email-address">Email address</label>
-
-                {/* ne pas toucher cette input excepté en css */}
-                <input
-                  id="email-address"
-                  name="email"
-                  type="email"
-                  required
-                  placeholder="Email address"
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-              </div>
-
-              <div>
-                <label htmlFor="password">Password</label>
-                {/* ne pas toucher cette input excepté en css */}
-                <input
-                  id="password"
-                  name="password"
-                  type="password"
-                  required
-                  placeholder="Password"
-                  onChange={(e) => setPassword(e.target.value)}
-                />
-              </div>
-
-              <div>
-                {/* peut être changer en input mais faut garder le onClick={onLogin} */}
-                <button onClick={onLogin}>Login</button>
-              </div>
-            </form>
-
-            <p className="text-sm text-white text-center">
-              No account yet? <NavLink to="/signup">Sign up</NavLink>
-              {/*              /\ liens de redirection vers la page inscription/\  */}
-            </p>
+        <section className="container">
+          <div className="header">
+            <img src={logowhite} alt="logo" className="logo"></img>
+            <h1>Hi, Welcome Back ! 👋</h1>
+          </div>
+          <div className="form">
+            <p>Email</p>
+            <input
+              id="email-address"
+              name="email"
+              type="email"
+              required
+              placeholder="Email address"
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <p>Password</p>
+            <input
+              id="password"
+              name="password"
+              type="password"
+              required
+              placeholder="Password"
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <div className="forgot">
+              <p>Forgot Password</p>
+            </div>
+            <div>
+              <button onClick={onLogin}>Login</button>
+            </div>
           </div>
         </section>
       </main>
