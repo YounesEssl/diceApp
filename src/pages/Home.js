@@ -1,16 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 import { signOut } from "firebase/auth";
 import { auth } from "../firebase";
 import { useNavigate } from "react-router-dom";
 import localStorage from "localStorage";
-import DateTimePicker from "react-datetime-picker";
 
 // components
 import Todo from "../components/Todo";
 import GameList from "../components/GameList";
+import Test from "../components/Test";
 
 const Home = () => {
-  const [value, onChange] = useState(new Date());
   const navigate = useNavigate();
 
   // fontion de connection qui redirige vers la page /login
@@ -73,14 +72,10 @@ const Home = () => {
       >
         date actuelle
       </button>
-      <DateTimePicker
-        onChange={onChange}
-        value={value}
-        format={"y MMMM dd | hh-mm"}
-        returnValue={"end"}
-      />
-      <button onClick={() => console.log(value)}>date</button>
-
+      <p>
+        ---------------------------------------------------------------------
+      </p>
+      <Test />
       <p>
         ----------------------------------------------------------------------------------------------------
       </p>
