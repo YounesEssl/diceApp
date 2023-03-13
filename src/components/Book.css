@@ -1,0 +1,220 @@
+.book-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.date-and-time {
+  display: flex;
+  width: 85%;
+  align-items: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.date-input {
+  width: 100%;
+  height: 30px;
+  border-radius: 20px;
+  background: #062c49;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 16px;
+  color: white;
+  font-weight: 700;
+  padding-left: 10px;
+}
+
+.date-input::placeholder {
+  color: #fff; /* couleur du placeholder */
+  font-weight: 700;
+}
+.nbclients {
+  display: flex;
+  width: 85%;
+  margin-top: 20px;
+  align-items: center;
+}
+.children-input {
+  height: 35px;
+  width: 40%;
+  border-radius: 20px;
+  background: #062c49;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 16px;
+  color: white;
+  margin-left: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.adults-input {
+  height: 35px;
+  width: 40%;
+  background: #062c49;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 16px;
+  color: white;
+  margin-left: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-weight: 700px;
+}
+
+.adults-input::placeholder {
+  color: #fff; /* couleur du placeholder */
+  font-weight: 700;
+}
+
+.children-input::placeholder {
+  color: #fff; /* couleur du placeholder */
+  font-weight: 700;
+}
+
+.special-request {
+  display: flex;
+  align-self: center;
+  margin-top: 30px;
+}
+
+.special-request-input {
+  background-color: #062c49;
+  border-radius: 16px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  padding-top: 10px;
+  padding-left: 10px;
+  color: white;
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.special-request-input::placeholder {
+  color: white;
+  font-weight: 700;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+select {
+  border-right: 16px solid transparent;
+  font-weight: 700;
+}
+
+.date-input[type="date"]::-webkit-calendar-picker-indicator {
+  border-right: 16px solid transparent;
+  margin-left:auto;
+  color: white;
+  filter: invert(1);
+}
+
+.date-input[type=date]:required:invalid::-webkit-datetime-edit {
+    display:none;
+}
+.date-input[type="date"]::before {
+	color: #fff;
+	content: attr(placeholder);
+}
+.date-input[type="date"]:focus::before {
+	display:none;
+}
+.date-input[type="date"]:valid::before {
+	display:none;
+}
+
+
+
+.dice-location {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+}
+.inputs-location {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  justify-content: space-around;
+}
+
+.carte1 {
+  width: 100%;
+  border-top: 10px solid #062c4933;
+  margin-top: 30px;
+}
+
+.carte2 {
+  width: 100%;
+}
+
+.info-carte1 {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  gap: 15px;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #062c4933;
+  margin-bottom: 20px;
+}
+
+.mail {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.phone {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.location {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.carte2 {
+  border-top: 10px solid #062c4933;
+}
+
+.sms-mail-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.sms-mail {
+  display: flex;
+  flex-direction: row;
+  gap: 70px;
+}
+
+.btn-sms-mail {
+  background-color: #062c49;
+  color: white;
+  border-radius: 20px;
+  padding: 10px 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.bold-text {
+  font-weight: 700;
+}
+
+.book-btn {
+  background-color: #e9bd1f;
+  color: black;
+  font-weight: 700;
+  border: none;
+  border-radius: 16px;
+  width: 135px;
+  height: 35px;
+  margin-bottom: 15px;
+}
+
+.confirm-text {
+  font-weight: 700;
+  font-size: 16px;
+}

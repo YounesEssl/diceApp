@@ -1,0 +1,45 @@
+@font-face {
+  font-family: "Liberator";
+  src: url("/public/fonts/liberator.woff2") format("woff2"),
+    url("/public/fonts/liberator.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.title-home {
+  font-family: "Liberator";
+  margin: 0px;
+  font-size: 36px;
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  margin-top: 40px;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+.home {
+  margin: 0 auto;
+  text-align: center;
+}
+
+
+.container-grid-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top:20px;
+}
+
+.grid-container {
+  width:80%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}

@@ -34,18 +34,20 @@ const Login = () => {
       <main>
         <section className="container">
           <div className="header">
-            <img src={logowhite} alt="logo" className="logo"></img>
-            <h1>Hi, Welcome Back ! 👋</h1>
+          <img src={logowhite} alt="logo" className="logo"></img>
+            <h1 className="title">Hi, Welcome Back ! 👋</h1>
           </div>
           <div className="form">
             <p>Email</p>
+            
             <input
               id="email-address"
               name="email"
               type="email"
               required
-              placeholder="Email address"
+              placeholder="example@domain.com"
               onChange={(e) => setEmail(e.target.value)}
+              className="input"
             />
             <p>Password</p>
             <input
@@ -53,14 +55,19 @@ const Login = () => {
               name="password"
               type="password"
               required
-              placeholder="Password"
+              placeholder="Enter Your Password"
               onChange={(e) => setPassword(e.target.value)}
+              className="input"
             />
             <div className="forgot">
               <p>Forgot Password</p>
             </div>
+            <div className="remember">
+              <input type="checkbox" className="checkbox" />
+              <p className="textremember">Remember me</p>
+            </div>
             <div>
-              <button onClick={onLogin}>Login</button>
+              <button className="loginbtn" onClick={onLogin}>Login</button>
             </div>
           </div>
         </section>

@@ -8,8 +8,10 @@ export default function NavBar() {
   const { pathname } = useLocation();
   if (withouSidebarRoutes.some((item) => pathname.includes(item))) return null;
   return (
+    <>
     <header className="header-container">
       <img src={logowhite} alt="Logo" className="header-logo" />
     </header>
+    </>
   );
 }

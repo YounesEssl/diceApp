@@ -1,28 +1,54 @@
-import React from "react";
-import { VscHome } from "react-icons/vsc";
-import { TbPlayCard } from "react-icons/tb";
-import { IoPersonOutline } from "react-icons/io5";
-import { BiSearch } from "react-icons/bi";
+import React, { useState } from "react";
 import "./Menu.css";
-export default function Menu() {
+import { FiHome, FiSearch, FiUser } from "react-icons/fi";
+import { CgCardDiamonds } from "react-icons/cg";
+import { AiOutlineLeft, AiOutlineMenu } from "react-icons/ai";
+import logoblack from "../images/logoblack.jpg";
+import { Link } from "react-router-dom";
+const Menu = (props) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleToggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
-    <div className="navcontainer">
-      <div>
-        <VscHome size={30} />
-        <p>Home Page</p>
+    <>
+      <button
+        className="menu-button"
+        style={{ color: props.couleur }}
+        onClick={handleToggleMenu}
+      >
+        <AiOutlineMenu />
+      </button>
+      <div className={`menu ${isOpen ? "open" : ""}`}>
+        {isOpen && (
+          <button className="close-button" onClick={handleToggleMenu}>
+            <AiOutlineLeft />
+          </button>
+        )}
+        <div className="all-content-menu">
+          <Link to="/" className="menu-item">
+            <FiHome className="icon" size={24} />
+            Home
+          </Link>
+          <Link to="/social" className="menu-item">
+            <CgCardDiamonds className="icon" size={24} />
+            Social
+          </Link>
+          <Link to="/account" className="menu-item">
+            <FiUser className="icon" size={24} />
+            Account
+          </Link>
+          <Link to="/" className="menu-item">
+            <FiSearch className="icon" size={24} />
+            Search
+          </Link>
+        </div>
+        <img src={logoblack} alt="Your" className="menu-image" />
       </div>
-      <div>
-        <TbPlayCard size={30} />
-        <p>Social</p>
-      </div>
-      <div>
-        <IoPersonOutline size={30} />
-        <p>Account</p>
-      </div>
-      <div>
-        <BiSearch size={30} />
-        <p>Search</p>
-      </div>
-    </div>
+    </>
   );
-}
+};
+
+export default Menu;

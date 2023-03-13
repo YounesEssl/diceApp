@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+a {
+  text-decoration: none;
+  color:black;
+}
+
+.menu-button {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 28px;
+  z-index: 300;
+}
+
+.menu {
+  z-index: 999;
+  height: calc(100vh - 132px);
+  width: 230px;
+  background-color: white;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  top: 132px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out; 
+}
+
+.menu.open {
+  transform: translateX(0);
+}
+
+.menu-item {
+  width: 90%;
+  height: 50px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 10%;
+  margin-top: 10px;
+  padding-bottom: 10px;
+}
+
+.menu-item:not(:nth-child(5)) {
+  border-bottom: 2px solid gray;
+  width: 80%;
+  margin-left: 10%;
+}
+
+.icon {
+  margin-right: 10px;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  color: black;
+  cursor: pointer;
+  font-size: 28px;
+  position: fixed;
+  top:10px;
+  left:180px;
+  z-index: 9999;
+}
+
+.menu-image {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 40px;
+  margin-bottom: 10px;
+}
+
+
+.all-content-menu {
+  width:100%;
+  margin-top:20px;
+}

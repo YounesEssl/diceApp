@@ -1,0 +1,50 @@
+.img-dungeon {
+    width: 70px;
+    border-radius: 100%;
+    margin-right: 20px;
+    border-top-color: #181819;
+    border-right-color: #181819;
+    border-bottom-color: #181819;
+    border-left-color: #181819;
+    border-top-width: 2px;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+    border-left-width: 2px;
+    border-top-style: solid;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+}
+
+.title-dungeon {
+    font-family: "Liberator";
+    font-size:24px;
+    margin-left:15px;
+    margin-top:20px;
+}
+
+.event-container {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-left:10px;
+    margin-right:10px;
+    font-size:12px;
+}
+
+.all-container-dungeon {
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: #E9BD1F;
+    margin-top:40px;
+    width:90%;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.4));
+border-radius: 5px;
+}
+
+.main-dungeon {
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+}
